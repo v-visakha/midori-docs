@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Midori is a personal journal and AI analyzer for Japanese matcha enthusiasts.">
+  <meta name="theme-color" content="#f5f7f0">
+  <title>Midori — Support</title>
+  <style>
+    :root {
+      --ink: #1f2a24;
+      --muted: #66736a;
+      --green: #426b51;
+      --green-dark: #2e513b;
+      --green-soft: #e6eee6;
+      --cream: #fbfcf8;
+      --line: #dfe8df;
+      --shadow: 0 24px 70px rgba(50, 79, 57, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 6%, rgba(204, 226, 205, 0.55), transparent 28rem),
+        linear-gradient(145deg, #f1f6ef 0%, var(--cream) 55%, #f4f8f2 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(100% - 32px, 1040px);
+      margin: 0 auto;
+      padding: 28px 0 34px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 62px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--green-dark);
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(50, 79, 57, 0.08);
+    }
+
+    /* Replace the src below with your app logo URL. */
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-mark span {
+      display: none;
+      color: var(--green);
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    nav a {
+      margin-left: 24px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    nav a:hover, nav a:focus-visible { color: var(--green-dark); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      align-items: center;
+      gap: 64px;
+      margin-bottom: 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 22px;
+      height: 2px;
+      border-radius: 10px;
+      background: var(--green);
+      content: "";
+    }
+
+    h1 {
+      max-width: 650px;
+      margin: 0;
+      color: var(--green-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.8rem, 7vw, 5.4rem);
+      font-weight: 500;
+      letter-spacing: -0.065em;
+      line-height: 0.98;
+    }
+
+    .intro {
+      max-width: 570px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+    }
+
+    .logo-card {
+      position: relative;
+      display: grid;
+      min-height: 310px;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: linear-gradient(145deg, #edf5ed, #dae9db);
+      box-shadow: var(--shadow);
+    }
+
+    .logo-card::before,
+    .logo-card::after {
+      position: absolute;
+      border: 1px solid rgba(66, 107, 81, 0.16);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .logo-card::before { width: 250px; height: 250px; }
+    .logo-card::after { width: 370px; height: 370px; }
+
+    .logo-placeholder {
+      z-index: 1;
+      display: grid;
+      width: 144px;
+      height: 144px;
+      place-items: center;
+      overflow: hidden;
+      border: 7px solid rgba(255, 255, 255, 0.72);
+      border-radius: 38px;
+      background: #fff;
+      color: var(--green);
+      box-shadow: 0 18px 36px rgba(45, 82, 54, 0.16);
+      text-align: center;
+    }
+
+    .logo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-placeholder span {
+      display: none;
+      padding: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(250px, 0.8fr);
+      gap: 24px;
+    }
+
+    .panel {
+      padding: clamp(24px, 4vw, 38px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 10px 28px rgba(50, 79, 57, 0.045);
+    }
+
+    h2 {
+      margin: 0 0 22px;
+      color: var(--green-dark);
+      font-size: 1.35rem;
+      letter-spacing: -0.025em;
+    }
+
+    .features {
+      display: grid;
+      gap: 19px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .features li {
+      position: relative;
+      padding-left: 30px;
+      color: var(--muted);
+    }
+
+    .features li::before {
+      position: absolute;
+      top: 0.45em;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      border: 3px solid var(--green);
+      border-radius: 50%;
+      background: var(--green-soft);
+      content: "";
+    }
+
+    .features strong { color: var(--ink); }
+
+    .support-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .support-panel p { margin: 0 0 20px; color: var(--muted); }
+
+    .email {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      width: fit-content;
+      padding: 11px 15px;
+      border-radius: 12px;
+      background: var(--green-soft);
+      color: var(--green-dark);
+      font-weight: 700;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .email:hover, .email:focus-visible { background: #d8e7d9; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 28px;
+      padding: 22px 4px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    .legal { display: flex; flex-wrap: wrap; gap: 18px; }
+    .legal a { text-underline-offset: 3px; }
+    .legal a:hover, .legal a:focus-visible { color: var(--green-dark); }
+
+    @media (max-width: 760px) {
+      header { align-items: flex-start; margin-bottom: 44px; }
+      nav { display: none; }
+      .hero, .content { grid-template-columns: 1fr; gap: 32px; }
+      .hero { margin-bottom: 38px; }
+      .logo-card { min-height: 240px; }
+      footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .panel, .logo-card { transition: transform 180ms ease, box-shadow 180ms ease; }
+      .panel:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <a class="brand" href="index.html" aria-label="Midori Support home">
+        <span class="brand-mark" aria-hidden="true">
+          <!-- Replace the URL below with your app logo image URL. -->
+          <img src="https://v-visakha.github.io/midori-docs/MidoriLogo.png" alt="">
+          <span>M</span>
+        </span>
+        <span>Midori</span>
+      </a>
+      <nav aria-label="Page navigation">
+        <a href="#features">Features</a>
+        <a href="#support">Support</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Support</p>
+        <h1 id="page-title">Midori — Support</h1>
+        <p class="intro">Midori is a personal journal and AI analyzer designed for Japanese matcha enthusiasts.</p>
+      </div>
+
+      <div class="logo-card" aria-label="Midori app logo">
+        <div class="logo-placeholder">
+          <!-- Replace the URL below with your app logo image URL. -->
+          <img src="https://v-visakha.github.io/midori-docs/MidoriLogo.png" alt="Midori app logo">
+          <span>Paste your app logo URL here</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <article class="panel" id="features">
+        <h2>Key Features</h2>
+        <ul class="features">
+          <li><strong>On-Device AI Analyzer:</strong> Evaluate matcha quality from photos using local machine learning.</li>
+          <li><strong>Personal Journal:</strong> Log tea samples, tasting notes, prices, and purchase locations.</li>
+          <li><strong>Matcha Guides:</strong> Explore brewing tips, life hacks, and tea culture.</li>
+          <li><strong>100% Private &amp; Offline:</strong> All data and ML processing stay strictly on your device.</li>
+        </ul>
+      </article>
+
+      <aside class="panel support-panel" id="support">
+        <div>
+          <h2>Need help?</h2>
+          <p>For questions, feedback, or technical support, contact the developer by email.</p>
+        </div>
+        <a class="email" href="mailto:v.visakha.dev@gmail.com" aria-label="Email the Midori developer">
+          <span aria-hidden="true">✉</span>
+          v.visakha.dev@gmail.com
+        </a>
+      </aside>
+    </section>
+
+    <footer>
+      <span>© 2026 Midori</span>
+      <div class="legal">
+        <a href="https://v-visakha.github.io/midori-docs/privacy.html">Privacy Policy</a>
+        <a href="https://v-visakha.github.io/midori-docs/terms.html">Terms of Use</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
